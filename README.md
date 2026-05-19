@@ -17,7 +17,7 @@ It is a REST API for managing visits at a veterinary clinic.
 
 ## Requirements
 * Node.js installed
-* A MySQL database with the tables: visits, owners, animals, and veterinarians
+* A MySQL database with the tables: besok, agare, veterinar and besok
 
 ## Installation
 
