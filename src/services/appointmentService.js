@@ -1,5 +1,5 @@
 //Service lager för appointments. Hanterar logiken för att hämta, skapa, uppdatera och ta bort appointments. 
-// Använder funktioner från appointmentModel för att interagera med databasen.
+// Anropar funktioner från appointmentModel för att interagera med databasen.
 import * as Appointment from '../models/appointmentModel.js';
 import { AppError } from '../utils/AppError.js';
 
