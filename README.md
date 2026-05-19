@@ -29,6 +29,7 @@ DB_NAME=djursjukhus
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET    | /api/appointments | Get all appointments |
+| GET    | /api/appointments/count | Count the appointments |
 | POST   | /api/appointments | Create new appointment |
 | PUT    | /api/appointments/:id | Update appointment |
 | DELETE | /api/appointments/:id | Delete appointment |
