@@ -1,36 +1,48 @@
-# Backend Slutprojekt 
-Detta är mitt slutprojekt i backend kursen. 
-Det är ett rest-api för att hantera besöken på ett djursjukhus.
+# Backend Final Project
 
-# Tech-stack
-Node.js
-Express
-MySQL
+This is my final project for the backend course.  
+It is a REST API for managing visits at a veterinary clinic.
 
-#Förutsättningar 
-Node.js installerat 
-En MySql databas med tabellerna besok, agare, djur och veterinar
+## Tech Stack
+* Node.js
+* Express
+* MySQL
 
-# Installation
-1. Klona repot: git clone https://github.com/hannasahlberg/Backend_slutprojekt.git
-2. Navigera till projekt-mappen
-3. npm install 
-4. Skapa en .env-fil och lägg till dina uppgifter och kopiera detta och fyll i dina uppgifter
+## Features
+- Create appointments
+- Update appointments
+- Delete appointments
+- Get all appointments
+- Count total appointments
 
+## Requirements
+* Node.js installed
+* A MySQL database with the tables: visits, owners, animals, and veterinarians
+
+## Installation
+
+1. Clone the repository: git clone https://github.com/hannasahlberg/Backend_slutprojekt.git
+2. Navigate to the project folder
+3. Install dependencies: npm install
+4. Create a `.env` file and add the following variables:
+```
 PORT=3000
 DB_HOST=localhost
 DB_PORT=3306
-DB_USER=användarnamn
-DB_PASSWORD=lösenord
-DB_NAME=djursjukhus
+DB_USER=username
+DB_PASSWORD=password
+DB_NAME=animal_hospital
+```
+5. Start the server: node server.js
 
-# Endpoints
+
+## API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET    | /api/appointments | Get all appointments |
-| GET    | /api/appointments/count | Count the appointments |
-| POST   | /api/appointments | Create new appointment |
-| PUT    | /api/appointments/:id | Update appointment |
-| DELETE | /api/appointments/:id | Delete appointment |
+| GET    | /api/appointments/count | Get total number of appointments |
+| POST   | /api/appointments | Create a new appointment |
+| PUT    | /api/appointments/:id | Update an appointment |
+| DELETE | /api/appointments/:id | Delete an appointment |
 
