@@ -2,7 +2,7 @@
 import { query } from "../config/db.js";
 export const findAll = async (vetID) => {
     let sql = 
-        `SELECT besok.behandling, besok.datum, djur.namn AS djur, CONCAT(veterinar.fnamn, ' ', veterinar.enamn) AS veterinar, veterinar.vetID,
+        `SELECT besok.behandling, besok.datum, besok.kostnad, djur.namn AS djur, CONCAT(veterinar.fnamn, ' ', veterinar.enamn) AS veterinar, veterinar.vetID,
          CONCAT(agare.fnamn, ' ', agare.enamn) AS agare FROM besok INNER JOIN veterinar ON besok.vetID = veterinar.vetID 
          INNER JOIN djur ON djur.djurID = besok.djurID INNER JOIN agare ON agare.agarID = djur.agarID`;
 
