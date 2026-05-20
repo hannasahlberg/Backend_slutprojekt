@@ -3,8 +3,8 @@
 import * as Appointment from '../models/appointmentModel.js';
 import { AppError } from '../utils/AppError.js';
 
-export const getAll = async () => {
-  return await Appointment.findAll();
+export const getAll = async (vetID) => {
+  return await Appointment.findAll(vetID);
 };
 
 export const create = async (data) => {

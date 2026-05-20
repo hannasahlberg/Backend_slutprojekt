@@ -1,10 +1,19 @@
 //Dessa funktioner används av service-lagret för att utföra SQL-frågor mot databasen. 
 import { query } from "../config/db.js";
-export const findAll = async () => {
-    return await query(
-        `SELECT besok.behandling, besok.datum, djur.namn AS djur, CONCAT(veterinar.fnamn, ' ', veterinar.enamn) AS veterinar,
+export const findAll = async (vetID) => {
+    let sql = 
+        `SELECT besok.behandling, besok.datum, djur.namn AS djur, CONCAT(veterinar.fnamn, ' ', veterinar.enamn) AS veterinar, veterinar.vetID,
          CONCAT(agare.fnamn, ' ', agare.enamn) AS agare FROM besok INNER JOIN veterinar ON besok.vetID = veterinar.vetID 
-         INNER JOIN djur ON djur.djurID = besok.djurID INNER JOIN agare ON agare.agarID = djur.agarID;`);
+         INNER JOIN djur ON djur.djurID = besok.djurID INNER JOIN agare ON agare.agarID = djur.agarID`;
+
+         const params = [];
+
+         if (vetID) {
+            sql += ' WHERE besok.vetID = ?';
+            params.push(vetID);
+        }
+    
+        return await query(sql, params);
 }
 
 export const findById = async (id) => {

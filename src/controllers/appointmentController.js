@@ -4,7 +4,8 @@ import { asyncHandler } from '../utils/asyncHandler.js';
 //controller-funktioner som tar emot requests, hämtar data via service och skickar response. 
 //Alla funktioner är inlindade i asyncHandler för att fånga eventuella fel och skicka dem vidare till error-handling middleware.
 export const getAppointments = asyncHandler(async (req, res) => {
-    const appointments = await appointmentService.getAll();
+    const { vetID } = req.query;
+    const appointments = await appointmentService.getAll(vetID);
     res.json(appointments);
 });
 
